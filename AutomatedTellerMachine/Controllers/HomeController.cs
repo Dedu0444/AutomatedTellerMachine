@@ -11,7 +11,7 @@ namespace AutomatedTellerMachine.Controllers
         //GET/home/index
         public ActionResult Index()
         {
-         
+
             return View();
         }
         //GET/home/about 
@@ -22,11 +22,21 @@ namespace AutomatedTellerMachine.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.TheMessage = "Having trouble? send us a message";
 
-            return View(); 
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            //TODO: send a message to HQ
+            ViewBag.TheMessage = "Thank you, we got your message";
+            return View();
         }
 
         public ActionResult Foo()
